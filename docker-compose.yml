@@ -4,7 +4,7 @@ services:
     # build: <chemin_vers_dossier_contenant_dockerfile>
     build: .
     volumes:
-      - ./src/critique_film:/app/src/critique_film
+      - ./src/hotel:/app/src/hotel
     ports:
     # - <HOST_PORT>:<CONTAINER_PORT>
       - 5000:5000
@@ -14,7 +14,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: pass
-      MYSQL_DATABASE: critiques_de_films
+      MYSQL_DATABASE: hotel
     volumes:
       - mysql_data:/var/lib/mysql
 
