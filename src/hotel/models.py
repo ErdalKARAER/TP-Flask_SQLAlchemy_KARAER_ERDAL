@@ -22,6 +22,6 @@ class Reservation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_arrivee = db.Column(db.DateTime, default=datetime.utcnow)
     date_depart = db.Column(db.DateTime, default=datetime.utcnow)
-    statut = db.Column(db.String(100), nullable=False)
+    statut = db.Column(db.String(100))
     id_client = db.Column(db.Integer, db.ForeignKey('client.id'), nullable=False)
     id_chambre = db.Column(db.Integer, db.ForeignKey('chambre.id'), nullable=False)
