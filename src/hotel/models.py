@@ -14,14 +14,12 @@ class Chambre(db.Model):
     numero = db.Column(db.Integer, nullable=False, unique=True)
     type = db.Column(db.String(100))
     prix =  db.Column(db.Integer)
-    prix2 =  db.Column(db.Integer)
     reservations = db.relationship('Reservation', backref='chambre', lazy=True)
 
 
 
 class Reservation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    contenu = db.Column(db.Text, nullable=False)
     date_arrivee = db.Column(db.DateTime, default=datetime.utcnow)
     date_depart = db.Column(db.DateTime, default=datetime.utcnow)
     statut = db.Column(db.String(100), nullable=False)
